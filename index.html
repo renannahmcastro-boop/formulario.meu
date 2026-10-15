@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        /* Reset de estilos básicos para consistência visual */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Estilização do fundo da página */
+        body {
+            background: linear-gradient(135deg, #7159c1, #9b49c1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Container do Formulário */
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+
+        .form-container h2 {
+            color: #333333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Grupos de campos do formulário */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666666;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Inputs de texto, e-mail e senha */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Efeito de foco nos campos */
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #7159c1;
+        }
+
+        /* Estilização para campos de seleção múltipla (Radio Buttons) */
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #444444;
+        }
+
+        /* Botão de Envio */
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #7159c1;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #5a44a3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Criar Conta</h2>
+        
+        <!-- Formulário configurado com método POST para envio seguro de dados -->
+        <form action="#" method="POST">
+            
+            <!-- Campo Nome -->
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <!-- Campo E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Ex: seuemail@provedor.com" required>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha forte" required>
+            </div>
+
+            <!-- Campo Seleção (Dropdown) -->
+            <div class="form-group">
+                <label for="perfil">Perfil de Usuário</label>
+                <select id="perfil" name="perfil" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="desenvolvedor">Desenvolvedor</option>
+                    <option value="designer">Designer</option>
+                    <option value="gerente">Gerente de Projetos</option>
+                </select>
+            </div>
+
+            <!-- Campo de Opção Única (Radio) -->
+            <div class="form-group">
+                <label>Gênero</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="genero" value="masculino" required> Masculino
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="genero" value="feminino"> Feminino
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="genero" value="outro"> Outro
+                    </label>
+                </div>
+            </div>
+
+            <!-- Campo de Texto Longo (Mensagem/Biografia) -->
+            <div class="form-group">
+                <label for="bio">Sobre você (Opcional)</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Conte um pouco sobre sua experiência..."></textarea>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="btn-submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
